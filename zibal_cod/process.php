@@ -8,11 +8,10 @@ if (isset($_GET['do'])) {
 	include (dirname(__FILE__) . '/../../config/config.inc.php');
 	include (dirname(__FILE__) . '/zibal_cod.php');
 	$zibal_cod = new zibal_cod();
-
 	if ($_GET['do'] == 'payment') {
-
-		$zibal_cod->do_payment($cart);
-
+        include (dirname(__FILE__) . '/../../header.php');
+        $zibal_cod->do_payment($cart);
+        include (dirname(__FILE__) . '/../../footer.php');
 	} else {
 
 		if (isset($_GET['iso_code']) && isset($_POST['zibalId']) && isset($_POST['orderId']) && isset($_POST['refNumber']) && isset($_POST['paidAt'])) {
@@ -42,7 +41,7 @@ if (isset($_GET['do'])) {
 
             $hash = md5($order.$orderFromZibal->amount  . Configuration::get('zibal_cod_hash'));
 
-				
+
             if ($hash == $_GET['hash']) {
 
                 $order = new Order((int)$order);
