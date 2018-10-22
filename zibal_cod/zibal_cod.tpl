@@ -1,12 +1,13 @@
 
-<!-- Pay.ir Payment Module -->
+<!-- zibal.ir COD Payment Module -->
 <p class="payment_module">
-  <a href="javascript:$('#payir').submit();" title="Online payment with Pay.ir">
-    <img src="https://pay.ir/images/logo.png" alt="Online payment with Pay.ir" style="margin-left:20px;" />
-    پرداخت از طریق درگاه پرداخت و کیف پول الکترونیک Pay.ir
+  <a href="javascript:$('#zibal_cod').submit();" class="zibal" title="COD Payment with zibal.ir">
+    <img src="modules/zibal/logo.png" alt="COD Payment with zibal.ir" style="margin-left:20px;" />
+ پرداخت در محل با زیبال
   </a>
 </p>
-<form id="payir" action="modules/payir/process.php?do=payment" method="post" class="hidden">
+<form id="zibal_cod" action="modules/zibal_cod/process.php?do=payment" method="post" class="hidden">
   <input type="hidden" name="orderId" value="{$orderId}" />
 </form>
-<!-- End of Pay.ir Payment Module-->
+<!-- End of zibal.ir COD Payment Module-->
+
